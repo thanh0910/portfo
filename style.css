@@ -1,0 +1,67 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f0f2f5;
+  color: #333;
+}
+
+/* Banner */
+header {
+  text-align: center;
+  background: linear-gradient(135deg, #0078d4, #00aaff);
+  color: white;
+  padding: 40px 0;
+}
+
+.banner h1 {
+  margin: 0;
+  font-size: 36px;
+}
+
+/* Navbar */
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  background: #005f99;
+  margin: 0;
+  padding: 10px;
+  gap: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Bố cục chính */
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Các khối nội dung */
+section {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+section h2 {
+  color: #0078d4;
+  border-bottom: 2px solid #0078d4;
+  padding-bottom: 5px;
+}
+
+ul {
+  padding-left: 20px;
+}
+
