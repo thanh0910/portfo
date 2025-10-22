@@ -1,67 +1,186 @@
+/* Font & Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: 'Poppins', sans-serif;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  background: #f0f2f5;
-  color: #333;
-}
-
-/* Banner */
-header {
-  text-align: center;
-  background: linear-gradient(135deg, #0078d4, #00aaff);
-  color: white;
-  padding: 40px 0;
-}
-
-.banner h1 {
-  margin: 0;
-  font-size: 36px;
+  background-color: #fdfafa;
+  color: #141414;
 }
 
 /* Navbar */
-nav ul {
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.navbar .logo {
+  font-weight: 600;
+  color: #0078ff;
+}
+
+.navbar ul {
   list-style: none;
   display: flex;
-  justify-content: center;
-  background: #005f99;
-  margin: 0;
-  padding: 10px;
-  gap: 20px;
+  gap: 25px;
 }
 
-nav ul li a {
+.navbar a {
   text-decoration: none;
-  color: white;
-  font-weight: bold;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
 }
 
-nav ul li a:hover {
-  text-decoration: underline;
+.navbar a:hover {
+  color: #0078ff;
 }
 
-/* Bố cục chính */
-main {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 20px;
-  padding: 20px;
+/* Banner */
+.banner {
+  height: 100vh;
+  background: linear-gradient(to bottom right, #eaf3ff, #ffffff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding-top: 80px;
+  animation: fadeIn 1.5s ease-in;
 }
 
-/* Các khối nội dung */
-section {
-  background: white;
+.banner .avatar {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #0078ff;
+  margin-bottom: 20px;
+  transition: transform 0.4s;
+}
+
+.banner .avatar:hover {
+  transform: scale(1.1);
+}
+
+.banner h1 {
+  font-size: 2.5em;
+  color: #0078ff;
+}
+
+.banner p {
+  font-size: 1.5em;
+  color: #555;
+}
+
+/* Section chung */
+.section {
+  padding: 80px 10%;
+  animation: fadeUp 1s ease;
+}
+
+.section h2 {
+  color: #0078ff;
+  margin-bottom: 20px;
+}
+
+.section p, .section li {
+  line-height: 1.8;
+}
+
+/* Skills */
+.skills .skill {
+  margin-bottom: 15px;
+}
+
+.bar {
+  background: #ddd;
+  height: 10px;
   border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.progress {
+  background: #0078ff;
+  height: 100%;
+  border-radius: 10px;
+  animation: growBar 2s ease;
+}
+
+/* Project */
+.project {
+  background: #fff;
   padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
 }
 
-section h2 {
-  color: #0078d4;
-  border-bottom: 2px solid #0078d4;
-  padding-bottom: 5px;
+.project:hover {
+  transform: translateY(-5px);
 }
 
-ul {
-  padding-left: 20px;
+.btn {
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+  color: #fff;
+  background: #0078ff;
+  padding: 8px 15px;
+  border-radius: 8px;
+  transition: background 0.3s;
 }
 
+.btn:hover {
+  background: #005ecc;
+}
+
+/* Contact */
+.contact .social a {
+  margin-right: 15px;
+  text-decoration: none;
+  color: #0078ff;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.contact .social a:hover {
+  color: #005ecc;
+}
+
+/* Footer */
+footer {
+  background: #0078ff;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 30px;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeUp {
+  from {transform: translateY(30px); opacity: 0;}
+  to {transform: translateY(0); opacity: 1;}
+}
+
+@keyframes growBar {
+  from {width: 0;}
+  to {width: 100%;}
+}
