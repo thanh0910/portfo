@@ -43,12 +43,14 @@ body {
   padding: 14px 0;
 }
 .logo {
-  color: var(--accent);
+  color: #334b49;
   text-decoration: none;
   font-weight: 700;
   font-size: 1.15rem;
   padding-left: 20px;
 }
+.intro-section .logo:hover {
+  color: #f9f9f9;}
 .theme-btn {
   background: transparent;
   border: 0;
@@ -302,4 +304,186 @@ body {
 }
 html {
   scroll-behavior: smooth;
+}
+/* ====== SỞ THÍCH ====== */
+.hobby-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.hobby-card {
+  text-align: center;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.hobby-card h3 {
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 14px;
+  font-size: 1.3rem;
+}
+
+.hobby-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid rgba(255,255,255,0.6);
+  box-shadow: 0 6px 20px rgba(0, 109, 119, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(8px);
+}
+
+.hobby-card:hover .hobby-img {
+  transform: scale(1.08);
+  box-shadow: 0 10px 35px rgba(56, 189, 248, 0.6);
+}
+
+.hobby-card:hover {
+  transform: translateY(-8px);
+}
+/* ===== BANNER GIỚI THIỆU ===== */
+.banner {
+  text-align: center;
+  padding: 40px 0;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1); /* trong mờ nhẹ */
+  backdrop-filter: blur(12px);           /* hiệu ứng kính */
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.25);
+  box-shadow: 0 4px 25px rgba(0, 109, 119, 0.35);
+  margin-bottom: 35px;
+  border-radius: 0 0 20px 20px;
+  animation: fadeInDown 1s ease forwards;
+}
+
+.banner h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 1px;
+  color: #eafcff;
+  text-shadow: 0 0 12px rgba(131,197,190,0.7);
+}
+
+.banner p {
+  font-size: 1.1rem;
+  font-weight: 400;
+  opacity: 0.95;
+  margin-top: 8px;
+  color: #dff7f9;
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* ===== TRANG GIỚI THIỆU (FULL SCREEN) ===== */
+.intro-section {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(120deg, rgba(0, 109, 119, 0.9), rgba(0, 0, 0, 0.6)),
+              url('images/bg.jpg') center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  overflow: hidden;
+}
+
+.intro-nav {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background: transparent;
+  border: none;
+  z-index: 5;
+}
+
+.intro-content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 80px;
+  padding: 0 40px;
+  max-width: 1200px;
+}
+
+.intro-text {
+  max-width: 500px;
+  text-align: left;
+  animation: fadeInUp 1.2s ease forwards;
+}
+
+.intro-text h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #faffff;
+  text-shadow: 0 0 18px rgba(131,197,190,0.7);
+}
+
+.intro-text .accent {
+  color: #83c5be;
+}
+
+.intro-text p {
+  font-size: 1.2rem;
+  color: #cfecec;
+  margin-bottom: 35px;
+}
+
+.scroll-btn {
+  display: inline-block;
+  background: rgba(131, 197, 190, 0.25);
+  padding: 12px 28px;
+  border-radius: 50px;
+  color: #eafcff;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  transition: 0.3s ease;
+}
+
+.scroll-btn:hover {
+  background: rgba(131, 197, 190, 0.5);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(131, 197, 190, 0.5);
+}
+
+/* ===== ẢNH GIỚI THIỆU ===== */
+.intro-image img {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid rgba(255,255,255,0.4);
+  box-shadow: 0 0 25px rgba(131,197,190,0.6);
+  animation: fadeInUp 1.5s ease forwards;
+  transition: transform .4s ease, box-shadow .4s ease;
+}
+
+.intro-image img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px rgba(131,197,190,0.8);
+}
+
+@media (max-width: 900px) {
+  .intro-content {
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
+  }
+  .intro-text {
+    text-align: center;
+  }
 }
