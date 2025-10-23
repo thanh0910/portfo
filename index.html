@@ -1,108 +1,152 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CV Nguyễn Công Thành</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Interactive CV - Nguyễn Công Thành</title>
+
+  <!-- Link CSS -->
+  <link rel="stylesheet" href="style.css?v=2">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-  <!-- Navbar -->
-  <header>
-    <nav class="navbar">
-      <h2 class="logo">N.C.Thành</h2>
-      <ul>
-        <li><a href="#banner">Trang chủ</a></li>
-        <li><a href="#info">Thông tin</a></li>
-        <li><a href="#career">Nghề nghiệp</a></li>
-        <li><a href="#skills">Kỹ năng</a></li>
-        <li><a href="#projects">Dự án</a></li>
-        <li><a href="#contact">Liên hệ</a></li>
-      </ul>
-    </nav>
+
+  <!-- NAVBAR (keep simple) -->
+  <header class="navbar">
+    <div class="container">
+      <a class="logo" href="#">N.C.Thành</a>
+      <div class="nav-actions">
+      </div>
+    </div>
   </header>
 
-  <!-- Banner -->
-  <section id="banner" class="banner">
-    <div class="banner-content">
-      <img src="images/avatar.jpg" alt="Ảnh đại diện" class="avatar">
-      <h1>Nguyễn Công Thành</h1>
-      <p>Lập trình viên Front-End | UX/UI Designer</p>
-    </div>
-  </section>
+  <!-- MAIN LAYOUT -->
+  <main class="main-grid container">
 
-  <!-- Thông tin cá nhân -->
-  <section id="info" class="section">
-    <h2>Thông tin cá nhân</h2>
-    <ul>
-      <li><strong>Tên:</strong> Nguyễn Công Thành </li>
+    <!-- LEFT: Hero / Main display -->
+    <section class="hero" id="heroDisplay">
+      <div class="hero-card">
+        <img src="images/avatar.jpg" alt="Ảnh đại diện" class="hero-avatar">
+        <h1 class="hero-title" id="heroTitle">Nguyễn Công Thành</h1>
+        <p class="hero-sub" id="heroSubtitle"></p>
+
+        <div class="hero-content" id="heroContent">
+          <h3 class="content-heading">Thông tin cơ bản</h3>
+        </div>
+      </div>
+    </section>
+
+    <!-- RIGHT: Menu (content switcher) -->
+    <aside class="side-menu">
+      <nav>
+        <ul>
+          <li class="menu-item active" data-target="info">Thông tin</li>
+          <li class="menu-item" data-target="career">Mục tiêu</li>
+          <li class="menu-item" data-target="skills">Kỹ năng</li>
+          <li class="menu-item" data-target="projects">Dự án</li>
+          <li class="menu-item" data-target="contact">Liên hệ</li>
+        </ul>
+      </nav>
+    </aside>
+
+  </main>
+
+  <!-- TEMPLATES for content (hidden) -->
+  <template id="tpl-info">
+    <h3 class="content-heading">Thông tin cá nhân</h3>
+    <div class="info-card">
+    <ul class="info-list">
+      <li><strong>Tên:</strong> Nguyễn Công Thành</li>
       <li><strong>Ngày sinh:</strong> 09/10/2005</li>
-      <li><strong>Học tại:</strong> Trường đại học giao thông vận tải Thành phố Hồ Chí Minh</li>
-      <li><strong>MSSV:</strong>087205004413</li>
-      <li><strong>Email:</strong> nguyencongthanh09102005@gmail.com</li>
-      <li><strong>SĐT:</strong> 0342368630 </li>
+      <li><strong>Học tại:</strong> Trường ĐH Giao thông vận tải TP.HCM</li>
+      <li><strong>MSSV:</strong> 087205004413</li>
+      <li><strong>Chuyên Nghành:</strong>Công Nghệ Thông Tin </li>
+      <li><strong>Khóa học</strong> 2023 </li>
     </ul>
-  </section>
+  </template>
 
-  <!-- Mục tiêu nghề nghiệp -->
-  <section id="career" class="section">
-    <h2>Mục tiêu nghề nghiệp</h2>
-    <p>Mong muốn trở thành một UX/UI Designer , kết hợp tư duy thiết kế và kỹ năng lập trình để tạo ra những sản phẩm thân thiện, sáng tạo và hiệu quả cho người dùng.</p>
-  </section>
+  <template id="tpl-career">
+    <h3 class="content-heading"></h3>
+     <div class="info-card">
+    <p>Mong muốn trở thành một UX/UI Designer chuyên nghiệp, kết hợp giữa tư duy thiết kế sáng tạo, khả năng phân tích người dùng và kỹ năng lập trình để tạo ra những sản phẩm số thân thiện, hiệu quả và mang lại trải nghiệm tối ưu cho người dùng.</p>
+  </template>
+  <template id="tpl-skills">
+  <h3 class="content-heading"></h3>
+  <div class="skills-section">
 
-  <!-- Sở thích -->
-  <section class="section">
-    <h2>Sở thích</h2>
-    <p>🎨 Thiết kế giao diện • 🎮 Chơi game • 🎵 Nghe nhạc • 📸 Nhiếp ảnh</p>
-  </section>
-
-  <!-- Ngôn ngữ & Kỹ năng -->
-  <section id="skills" class="section skills">
-    <h2>Ngôn ngữ & Kỹ năng</h2>
     <div class="skill">
       <span>HTML / CSS</span>
-      <div class="bar"><div class="progress" style="width: 90%"></div></div>
+      <div class="progress-bar">
+        <div class="progress htmlcss">80%</div>
+      </div>
     </div>
+
     <div class="skill">
       <span>JavaScript</span>
-      <div class="bar"><div class="progress" style="width: 75%"></div></div>
+      <div class="progress-bar">
+        <div class="progress js">80%</div>
+      </div>
     </div>
+
     <div class="skill">
       <span>UX/UI Design</span>
-      <div class="bar"><div class="progress" style="width: 85%"></div></div>
+      <div class="progress-bar">
+        <div class="progress uxui">80%</div>
+      </div>
     </div>
-  </section>
 
-  <!-- Chứng chỉ - Giải thưởng -->
-  <section class="section">
-    <h2>Chứng chỉ - Giải thưởng</h2>
-    <p>Không có</p>
-  </section>
-
-  <!-- Dự án -->
-  <section id="projects" class="section">
-    <h2>Dự án cá nhân</h2>
-    <div class="project">
-      <h3>Portfolio Website</h3>
-      <p>Trang web giới thiệu bản thân.</p>
-      <a href="#" class="btn">Xem chi tiết</a>
+    <div class="skill">
+      <span>Adobe Photoshop</span>
+      <div class="progress-bar">
+        <div class="progress ps">80%</div>
+      </div>
     </div>
-  </section>
+  </div>
+</template>
+  <template id="tpl-projects">
+    <h3 class="content-heading"></h3>
+     <div class="info-card">
+    <div class="project-item">
+      <h4>Portfolio Website</h4>
+      <h4>Dự án quản lí chi tiêu tài chính</h4>
+      <a href="https://github.com/thanh0910" target="_blank">
+  <i class="fab fa-github"></i> Xem trên GitHub
+</a>
 
-  <!-- Liên hệ -->
-  <section id="contact" class="section contact">
-    <h2>Liên hệ</h2>
-    <div class="social">
-      <a href="https://github.com/thanh0910/portfo" target="_blank">🐱 GitHub</a>
-      <a href="https://www.facebook.com/share/19ZkdQVgVN/?mibextid=wwXIfr" target="_blank">📘 Facebook</a>
-      <a href="https://www.instagram.com/thanh6149nguyen/?igsh=MW05bHoycndwMjNwdg%3D%3D&utm_source=qr" target="_blank">📸 Instagram</a>
     </div>
-  </section>
+  </template>
 
-  <footer>
-    <p>© 2025 Nguyễn Công Thành. All rights reserved.</p>
+  <template id="tpl-contact">
+  <h3 class="content-heading"></h3>
+  <div class="info-card contact-section">
+
+    <a href="https://github.com/thanh0910" target="_blank" rel="noopener" class="contact-link">
+      <i class="fab fa-github"></i>
+      <span>GitHub</span>
+    </a>
+
+    <a href="https://www.facebook.com/share/19ZkdQVgVN/?mibextid=wwXIfr" target="_blank" rel="noopener" class="contact-link">
+      <i class="fab fa-facebook"></i>
+      <span>Facebook</span>
+    </a>
+
+    <a href="https://www.instagram.com/thanh6149nguyen/?igsh=MW05bHoycndwMjNwdg%3D%3D&utm_source=qr" target="_blank" rel="noopener" class="contact-link">
+      <i class="fab fa-instagram"></i>
+      <span>Instagram</span>
+    </a>
+  </div>
+
+</template>
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 Nguyễn Công Thành</p>
+    </div>
   </footer>
+
+  <!-- Script -->
+  <script src="script.js"></script>
 </body>
 </html>
